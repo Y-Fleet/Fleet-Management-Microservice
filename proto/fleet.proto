@@ -1,0 +1,55 @@
+syntax = "proto3";
+package FleetService;
+import "annotations.proto";
+
+option go_package = "./proto";
+import "google/protobuf/timestamp.proto";
+
+
+service fleetService {
+  rpc GetFleet(Empty) returns (VehicleListResponse) {
+    option (google.api.http) = {
+      post: "/GetFleet"
+      body: "*"
+    };
+  }
+}
+
+
+message FuelConsumption {
+  google.protobuf.Timestamp date = 1;
+  int32 distance_traveled = 2;
+  int32 fuel_used = 3;
+  int32 consumption = 4;
+}
+
+message MaintenanceHistory {
+  google.protobuf.Timestamp date = 1;
+  string description = 2;
+  int32 cost = 3;
+}
+
+message AssignedDriver {
+  string id = 1;
+  repeated string certifications = 2;
+}
+
+message Vehicle {
+  string id = 1;
+  string make = 2;
+  string model = 3;
+  int32 year = 4;
+  string license_plate_number = 5;
+  string vehicle_id_number = 6;
+  string warehouse_id = 7;
+  string status = 8;
+  repeated FuelConsumption fuel_consumption = 9;
+  repeated MaintenanceHistory maintenance_history = 10;
+  AssignedDriver assigned_driver = 11;
+}
+
+message Empty {}
+
+message VehicleListResponse {
+  repeated Vehicle vehicles = 1;
+}
