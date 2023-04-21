@@ -3,7 +3,7 @@ package service
 import (
 	"FleetService/models"
 
-	pb "github.com/Yfleet/shared_proto/api"
+	pb "github.com/Y-Fleet/Grpc-Api/api"
 
 	"github.com/golang/protobuf/ptypes"
 )

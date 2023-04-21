@@ -9,7 +9,7 @@ import (
 
 	service "FleetService/service"
 
-	pb "github.com/Yfleet/shared_proto/api"
+	pb "github.com/Y-Fleet/Grpc-Api/api"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

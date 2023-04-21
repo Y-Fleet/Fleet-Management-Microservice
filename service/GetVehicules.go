@@ -7,7 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 
-	pb "github.com/Yfleet/shared_proto/api"
+	pb "github.com/Y-Fleet/Grpc-Api/api"
 )
 
 func GetVehicle(client *mongo.Client) (*pb.VehicleListResponse, error) {
